@@ -5,9 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Slider } from './Slider';
 
+
 const testIssue = {
     issueNumber: 1,
-    pages: [{number:"cover",url:'placehold'},{number:1,url:'p2'},{number:2,url:'p2'},{number:"back",url:'backcov'}]
+    pages: [{number:"cover",url:"./imgs/Dunsel1/1_cv.png"},{number:1,url:'./imgs/Dunsel1/1_1.png'},{number:2,url:'./imgs/Dunsel1/1_2.png'},{number:"back",url:'backcov'}]
 }
 ReactDOM.render(<Slider issue={testIssue} />, document.getElementById('root'));
 
