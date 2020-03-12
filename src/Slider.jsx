@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {PageDisplay} from './pageDisplay'
 import './SlideStyle.css';
-import {ImageTest} from './testImage'
+import { ImageTest } from './testImage'
+import {Imageimport} from './imageimport'
 
 const queryReport = () => {
    return  window.matchMedia("(max-width: 1000px)").matches
@@ -164,14 +165,15 @@ export class Slider extends Component{
                     
                 </div>
                 <div className="navBar">
-                    <div className="arrow" onClick={this.prevPage}><i class="fas fa-caret-left"></i></div>
+                    <div className="arrow" onClick={this.prevPage}><i className="fas fa-caret-left"></i></div>
                     <div className="pageNav">{this.createNavBtns(this.props.issue.pages)}</div>
-                    <div className="arrow" onClick={this.nextPage}><i class="fas fa-caret-right"></i></div>
+                    <div className="arrow" onClick={this.nextPage}><i className="fas fa-caret-right"></i></div>
                     
                 </div>
                 <footer>
                     <p>Dunsel <span className="light">{this.props.issue.issueNumber}</span> @Dunsel_fahq <span className="light"> By Luke H. Berry</span></p>
                 </footer>
+                
             </div>
         )
     }

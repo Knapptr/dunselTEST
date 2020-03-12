@@ -19,7 +19,7 @@ export class PageDisplay extends Component{
                        
                         <div className={"frame single "+this.orient(this.props.issue.pages[currentPage])}>
                             
-                            <img onClick={()=>{this.props.handleClick(currentPage)}} src={this.props.issue.pages[currentPage].image.src} alt={"Page "+currentPage} />
+                            <img onClick={()=>{this.props.handleClick(currentPage)}} src={this.props.issue.pages[currentPage].image} alt={"Page "+currentPage} />
                     </div>
                     
                             
@@ -33,11 +33,11 @@ export class PageDisplay extends Component{
                     <div className="pages">
                        
                     <div className={"frame "+"Dual " +"left"} >
-                            <img onClick={()=>{this.props.handleClick(leftPage)}}src={this.props.issue.pages[leftPage].image.src} alt={"Page "+ leftPage} />
+                            <img onClick={()=>{this.props.handleClick(leftPage)}}src={this.props.issue.pages[leftPage].image} alt={"Page "+ leftPage} />
                     </div>
                    
                         <div className={"frame "+"Dual "+"right"} >
-                        <img  onClick={()=>{this.props.handleClick(rightPage)}}src={this.props.issue.pages[rightPage].image.src} alt={"Page "+rightPage}/>
+                        <img  onClick={()=>{this.props.handleClick(rightPage)}}src={this.props.issue.pages[rightPage].image} alt={"Page "+rightPage}/>
                     </div>
                             
                 </div>
