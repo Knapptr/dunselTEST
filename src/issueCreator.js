@@ -14,7 +14,8 @@ export const createIssue = (issueNumber, pages, landscapeArray) => {
     const pagesAssigner = () => {
         let pagesArray=[]
         for (let p = 0; p <= pages; p++) {
-            let image = images[("DUNSEL"+issueNumber+"/"+issueNumber + "-" + p + ".png")];
+            let image = new Image()
+            image.src = images[("DUNSEL" + issueNumber + "/" + issueNumber + "-" + p + ".png")];
             let landscape = false;
             if(landscapeArray.includes(p)){landscape = true}
             let newPage ={
