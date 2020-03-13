@@ -18,8 +18,34 @@ export class Slider extends Component{
         screenWidth: window.innerWidth,
         displayAmount: 2,
         issueLength: this.props.issue.pages.length,
-        focus: false
+        focus: false,
+        imagesLoaded: false,
+        images: []
     }
+    loadImages = () => {
+        let imagesArray = []
+        
+            for (let i = 0; i < this.state.issueLength; i++) {
+                let image = new Image()
+                if (i === this.state.issueLength-1) {
+                    
+                    image.onload = ()=>{
+                        this.setState({ images: imagesArray, imagesLoaded:true})
+                    
+                    }
+                }
+                imagesArray.push(image)
+                console.log(imagesArray)
+                }
+            for (let i = 0; i < this.state.issueLength; i++) {
+                    console.log('hello!')
+                    imagesArray[i].src = this.props.issue.pages[i].image
+                }
+            
+           
+            }
+        
+    
     displayLogic = () => {
         let amount;
         let currentPage = this.state.currentPages
@@ -158,12 +184,13 @@ export class Slider extends Component{
     }
    
     render() {
+    if(!this.state.imagesLoaded){this.loadImages()}
         return (
             
             <div className="imageSlider">
                 <div className="sliderHeader">DUNSEL <span className='light'>no.{this.props.issue.issueNumber}</span></div>
                 <div className="imageWindow">
-                    <PageDisplay onLoad={this.setImagesLoaded}loaded={this.state.imagesLoaded} screenWidth={this.state.screenWidth} handleClick={this.setFocus}displayAmount={this.state.displayAmount}issue={this.props.issue} currentPages={this.state.currentPages}></PageDisplay>
+                    <PageDisplay loaded={this.state.imagesLoaded} images={this.state.images} screenWidth={this.state.screenWidth} handleClick={this.setFocus}displayAmount={this.state.displayAmount}issue={this.props.issue} currentPages={this.state.currentPages}></PageDisplay>
                     
                 </div>
                 <div className="navBar">
