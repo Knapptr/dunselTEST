@@ -161,7 +161,6 @@ export class Slider extends Component{
         return (
             
             <div className="imageSlider">
-                <button onClick={this.setImagesLoaded}>Push After Load</button>
                 <div className="sliderHeader">DUNSEL <span className='light'>no.{this.props.issue.issueNumber}</span></div>
                 <div className="imageWindow">
                     <PageDisplay onLoad={this.setImagesLoaded}loaded={this.state.imagesLoaded} screenWidth={this.state.screenWidth} handleClick={this.setFocus}displayAmount={this.state.displayAmount}issue={this.props.issue} currentPages={this.state.currentPages}></PageDisplay>
