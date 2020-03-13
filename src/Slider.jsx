@@ -153,15 +153,18 @@ export class Slider extends Component{
             return <span onClick={() => { this.setPage(el) }} key={"page"+el} className={"pageBtn "+(this.isViewed(el)?"viewed":null)}>{el===0?"front":el===array.length-1?"back":""}</span> })
         return elements;
     }
-    
+    setImagesLoaded = () => {
+        this.setState({ imagesLoaded: true });
+    }
    
     render() {
         return (
             
             <div className="imageSlider">
+                <button onClick={this.setImagesLoaded}>Push After Load</button>
                 <div className="sliderHeader">DUNSEL <span className='light'>no.{this.props.issue.issueNumber}</span></div>
                 <div className="imageWindow">
-                    <PageDisplay screenWidth={this.state.screenWidth} handleClick={this.setFocus}displayAmount={this.state.displayAmount}issue={this.props.issue} currentPages={this.state.currentPages}></PageDisplay>
+                    <PageDisplay onLoad={this.setImagesLoaded}loaded={this.state.imagesLoaded} screenWidth={this.state.screenWidth} handleClick={this.setFocus}displayAmount={this.state.displayAmount}issue={this.props.issue} currentPages={this.state.currentPages}></PageDisplay>
                     
                 </div>
                 <div className="navBar">
