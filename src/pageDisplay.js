@@ -13,7 +13,9 @@ export class PageDisplay extends Component{
     }
    
     render() {
-        
+        if (!this.props.loaded) {
+            
+        }
         const pages = () => {
             let panels;
             const currentPage = this.props.currentPages;

@@ -184,7 +184,7 @@ export class Slider extends Component{
     }
    
     render() {
-    if(!this.state.imagesLoaded){this.loadImages()}
+        if (!this.state.imagesLoaded) { this.loadImages(); return(<h1>loading...</h1>)}
         return (
             
             <div className="imageSlider">
